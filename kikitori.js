@@ -110,5 +110,10 @@ $("playBtn").onclick=()=>{speak(); ans.focus();};
 $("slowBtn").onclick=()=>{speak(0.55); ans.focus();};
 $("hintBtn").onclick=()=>{ if($("reveal").hidden) showReveal(solved); else hideReveal(); ans.focus(); };
 
+const info=$("info");
+$("infoBtn").onclick=()=>info.showModal();
+$("infoClose").onclick=()=>info.close();
+info.addEventListener("click",e=>{ if(e.target===info) info.close(); });
+
 renderRanges(); next(false);
 fb.textContent="Clique em ▶ Ouvir para começar.";
